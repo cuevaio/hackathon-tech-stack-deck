@@ -836,7 +836,7 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
           className={
             compact
               ? "max-w-5xl rounded-[1.25rem] border border-white/12 bg-white p-4 text-lg font-semibold leading-7 tracking-[-0.04em] text-black shadow-2xl shadow-white/10"
-              : "max-w-4xl rounded-[2rem] border border-white/12 bg-white p-6 text-2xl font-semibold leading-9 tracking-[-0.05em] text-black shadow-2xl shadow-white/10 sm:text-3xl sm:leading-10"
+              : "max-w-4xl rounded-[1.5rem] border border-white/12 bg-white p-4 text-xl font-semibold leading-7 tracking-[-0.04em] text-black shadow-2xl shadow-white/10 sm:p-5 sm:text-2xl sm:leading-8"
           }
         >
           {slide.final}
