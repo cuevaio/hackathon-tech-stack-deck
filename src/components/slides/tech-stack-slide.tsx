@@ -719,18 +719,18 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
   }
 
   return (
-    <div className={compact ? "space-y-4" : "space-y-6 lg:space-y-8"}>
+    <div className={compact ? "space-y-4" : "space-y-4 lg:space-y-5"}>
       {slide.kicker ? (
         <p className="text-sm uppercase tracking-[0.4em] text-zinc-500">
           {slide.kicker}
         </p>
       ) : null}
-      <div className="space-y-4">
-        <h1 className="max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.08em] text-white sm:text-6xl lg:text-7xl">
+      <div className="space-y-3">
+        <h1 className="max-w-5xl text-4xl font-semibold leading-[0.98] tracking-[-0.075em] text-white sm:text-5xl lg:text-6xl">
           {slide.title}
         </h1>
         {slide.subtitle ? (
-          <p className="max-w-3xl text-2xl leading-9 tracking-[-0.04em] text-zinc-200 sm:text-3xl sm:leading-10">
+          <p className="max-w-3xl text-xl leading-7 tracking-[-0.04em] text-zinc-200 sm:text-2xl sm:leading-8">
             {slide.subtitle}
           </p>
         ) : null}
@@ -738,7 +738,7 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
       {slide.body?.map((text) => (
         <p
           key={text}
-          className="max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl"
+          className="max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg"
         >
           {text}
         </p>
@@ -748,7 +748,7 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
           className={
             compact
               ? "grid max-w-7xl gap-3 lg:grid-cols-3"
-              : "grid max-w-6xl gap-4 lg:grid-cols-2"
+              : "grid max-w-6xl gap-3 lg:grid-cols-2"
           }
         >
           {slide.sections.map((section) => (
@@ -757,7 +757,7 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
               className={
                 compact
                   ? "rounded-[1.25rem] border border-white/10 bg-white/[0.035] p-4 shadow-2xl shadow-black/20"
-                  : "rounded-[1.75rem] border border-white/10 bg-white/[0.035] p-5 shadow-2xl shadow-black/20"
+                  : "rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-4 shadow-2xl shadow-black/20"
               }
             >
               {section.title ? (
@@ -765,7 +765,7 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
                   className={
                     compact
                       ? "mb-2 text-lg font-semibold tracking-[-0.04em] text-white"
-                      : "mb-4 text-xl font-semibold tracking-[-0.04em] text-white sm:text-2xl"
+                      : "mb-3 text-lg font-semibold tracking-[-0.04em] text-white sm:text-xl"
                   }
                 >
                   {section.title}
@@ -777,14 +777,14 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
                   className={
                     compact
                       ? "mb-2 text-sm leading-6 text-zinc-300"
-                      : "mb-3 text-base leading-7 text-zinc-300 sm:text-lg"
+                      : "mb-2 text-sm leading-6 text-zinc-300 sm:text-base"
                   }
                 >
                   {text}
                 </p>
               ))}
               {section.bullets ? (
-                <ul className="grid gap-2 text-sm leading-6 text-zinc-200 sm:text-base">
+                <ul className="grid gap-1.5 text-sm leading-6 text-zinc-200 sm:text-base">
                   {section.bullets.map((bullet) => (
                     <li key={bullet} className="flex gap-3">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white" />
@@ -850,12 +850,12 @@ export function TechStackSlide({ slideNumber }: { slideNumber: number }) {
 
 function SlideTable({ table }: { table: Table }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/10">
-      <table className="w-full border-collapse text-left text-[13px] sm:text-sm">
+    <div className="overflow-hidden rounded-xl border border-white/10">
+      <table className="w-full border-collapse text-left text-xs sm:text-[13px]">
         <thead className="bg-white/10 text-zinc-100">
           <tr>
             {table.headers.map((header) => (
-              <th key={header} className="px-3 py-3 font-semibold">
+              <th key={header} className="px-3 py-2 font-semibold">
                 {header}
               </th>
             ))}
@@ -865,7 +865,7 @@ function SlideTable({ table }: { table: Table }) {
           {table.rows.map((row) => (
             <tr key={row.join("|")}>
               {row.map((cell) => (
-                <td key={cell} className="px-3 py-2 align-top">
+                <td key={cell} className="px-3 py-1.5 align-top leading-5">
                   {cell}
                 </td>
               ))}
